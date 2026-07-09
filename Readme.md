@@ -1,28 +1,24 @@
-# Credit Card Approval Prediction System
+# 💳 Credit Card Approval Prediction System
 
-## Overview
-
-The Credit Card Approval Prediction System is a Machine Learning-based web application that predicts whether a customer's credit card application is likely to be approved or rejected based on applicant information.
-
-The project uses historical customer data, performs data preprocessing, feature engineering, model training, and provides predictions through a Flask web application.
+A Machine Learning-based web application that predicts whether a customer's credit card application will be **Approved** or **Rejected** using applicant information. The application is built with **Python**, **Flask**, and **Scikit-learn**, and provides predictions through an interactive web interface.
 
 ---
 
-## Features
+## 📌 Features
 
-- User-friendly web interface using Flask
-- Predicts Credit Card Approval
-- Machine Learning-based prediction
-- Automatic categorical data encoding
-- Feature Engineering
-- Model Comparison
-- Random Forest Best Model Selection
-- Prediction Confidence Score
-- Responsive UI
+- Predicts credit card approval status
+- User-friendly Flask web application
+- Data preprocessing and feature engineering
+- Handles missing values
+- Balances data using SMOTE
+- Compares multiple Machine Learning models
+- Uses Random Forest as the final prediction model
+- Displays prediction confidence
+- Responsive web interface
 
 ---
 
-## Technologies Used
+## 🛠 Technologies Used
 
 ### Programming Language
 
@@ -32,13 +28,13 @@ The project uses historical customer data, performs data preprocessing, feature 
 
 - Scikit-learn
 - XGBoost
-- SMOTE (Imbalanced-Learn)
+- Imbalanced-Learn (SMOTE)
 
 ### Web Development
 
 - Flask
-- HTML
-- CSS
+- HTML5
+- CSS3
 
 ### Data Processing
 
@@ -50,13 +46,13 @@ The project uses historical customer data, performs data preprocessing, feature 
 - Matplotlib
 - Seaborn
 
-### Model Saving
+### Model Serialization
 
 - Joblib
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 Credit_card_approval_system/
@@ -65,145 +61,150 @@ Credit_card_approval_system/
 ├── prepare_data.py
 ├── train_model.py
 ├── requirements.txt
-│
-├── model.pkl
-├── encoders.pkl
-├── feature_names.pkl
+├── README.md
+├── .gitignore
 ├── model_comparison.csv
-│
-├── dataset/
-│   ├── application_record.csv
-│   ├── credit_record.csv
-│   └── final_credit_dataset.csv
 │
 ├── templates/
 │   ├── index.html
 │   └── result.html
 │
-├── static/
-│   └── style.css
-│
-└── README.md
+└── static/
+    └── style.css
 ```
+
+> **Note:** The trained model (`model.pkl`), encoders, and datasets are not included in this repository because of GitHub file size limits.
 
 ---
 
+## 📊 Dataset
+
+This project uses the following datasets:
+
+- `application_record.csv`
+- `credit_record.csv`
+
 ## Dataset
 
-The project uses two datasets:
+The datasets used in this project are available on Kaggle.
 
-- application_record.csv
-- credit_record.csv
+Download them and place them inside the `dataset/` folder.
 
-The datasets are merged using the Applicant ID.
+```
+dataset/
+├── application_record.csv
+└── credit_record.csv
+```
 
-After preprocessing, a new dataset is created:
+Dataset: https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction
+
+The datasets are merged using the **Applicant ID** to create:
 
 ```
 final_credit_dataset.csv
 ```
 
----
+Place the datasets inside a folder named:
 
-## Machine Learning Workflow
-
-1. Load Dataset
-2. Handle Missing Values
-3. Feature Engineering
-4. Label Encoding
-5. Train-Test Split
-6. Apply SMOTE
-7. Train Multiple Models
-8. Compare Model Performance
-9. Save Best Model
-10. Deploy using Flask
+```
+dataset/
+```
 
 ---
 
-## Models Used
+## ⚙️ Machine Learning Pipeline
+
+1. Load datasets
+2. Merge datasets
+3. Handle missing values
+4. Feature engineering
+5. Encode categorical features
+6. Split training and testing data
+7. Apply SMOTE for class balancing
+8. Train multiple ML models
+9. Compare model performance
+10. Save the best model
+11. Deploy using Flask
+
+---
+
+## 🤖 Machine Learning Models
+
+The following algorithms were trained and compared:
 
 - Logistic Regression
 - Decision Tree
 - Random Forest
 - XGBoost
 
-Random Forest achieved the best performance and is saved as the final model.
+### Best Performing Model
+
+- **Random Forest**
+- **Accuracy:** **85.79%**
+- **ROC-AUC Score:** **0.7851**
 
 ---
 
-## Feature Engineering
+## 📈 Evaluation Metrics
 
-The following features are created:
-
-- AGE
-- YEARS_EMPLOYED
-
-The following columns are removed:
-
-- DAYS_BIRTH
-- DAYS_EMPLOYED
-- FLAG_MOBIL
-
----
-
-## Evaluation Metrics
-
-The models are evaluated using:
+The models were evaluated using:
 
 - Accuracy
 - Precision
 - Recall
-- F1 Score
+- F1-Score
 - Confusion Matrix
 - ROC-AUC Score
 
 ---
 
-## Input Features
+## 📝 Input Features
 
 The web application accepts:
 
 - Gender
-- Own Car
-- Own House
 - Annual Income
 - Number of Children
+- Family Members
 - Income Type
-- Education Type
+- Education Level
 - Family Status
 - Housing Type
+- Occupation
+- Own Car
+- Own House
 - Age
 - Years Employed
 - Work Phone
 - Phone
 - Email
-- Occupation
-- Family Members
 
 ---
 
-## Output
+## 🎯 Prediction Output
 
-The application predicts:
+The application displays:
 
-- Approved
-- Rejected
-
-It also displays:
-
+- Credit Card Approval Status (Approved / Rejected)
 - Prediction Confidence (%)
 
 ---
 
-## Installation
+## 🚀 Installation
 
-Clone the repository.
+Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/nageswari196/credit_card_approval_prediction.git
 ```
 
-Install dependencies.
+Move into the project folder:
+
+```bash
+cd credit_card_approval_prediction
+```
+
+Install the required packages:
 
 ```bash
 pip install -r requirements.txt
@@ -211,7 +212,9 @@ pip install -r requirements.txt
 
 ---
 
-## Train the Model
+## ▶️ Training the Model
+
+Place the datasets inside the `dataset/` folder.
 
 Run:
 
@@ -219,13 +222,13 @@ Run:
 python prepare_data.py
 ```
 
-Then:
+Then train the model:
 
 ```bash
 python train_model.py
 ```
 
-The following files will be generated:
+This generates:
 
 ```
 model.pkl
@@ -236,15 +239,15 @@ model_comparison.csv
 
 ---
 
-## Run the Application
+## 🌐 Running the Application
 
-Start the Flask server.
+Start the Flask server:
 
 ```bash
 python app.py
 ```
 
-Open your browser.
+Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
@@ -252,19 +255,19 @@ http://127.0.0.1:5000
 
 ---
 
-## Project Workflow
+## 🔄 Project Workflow
 
 ```
 Raw Dataset
       │
       ▼
-Data Preprocessing
+Data Cleaning
       │
       ▼
 Feature Engineering
       │
       ▼
-Label Encoding
+Encoding
       │
       ▼
 SMOTE
@@ -273,13 +276,13 @@ SMOTE
 Model Training
       │
       ▼
-Model Comparison
+Model Evaluation
       │
       ▼
 Best Model Selection
       │
       ▼
-Model Deployment
+Flask Deployment
       │
       ▼
 Prediction
@@ -287,28 +290,28 @@ Prediction
 
 ---
 
-## Future Enhancements
+## 🔮 Future Enhancements
 
-- Deep Learning Models
 - Explainable AI (SHAP/LIME)
 - User Authentication
 - Database Integration
 - Cloud Deployment
 - REST API
-- PDF Report Generation
+- Model Retraining Pipeline
+- Docker Support
 
 ---
 
-## Author
+## 👩‍💻 Author
 
 **Nageswari**
 
-B.Tech Computer Science and Engineering
+B.Tech – Computer Science and Engineering
 
 Vignan's Lara Institute of Technology & Science
 
 ---
 
-## License
+## 📄 License
 
 This project is developed for educational and academic purposes.
