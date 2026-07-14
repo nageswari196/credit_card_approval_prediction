@@ -1,6 +1,3 @@
-# Ignore trained models
-*.pkl
-
 # Ignore datasets
 dataset/
 
