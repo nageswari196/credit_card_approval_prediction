@@ -304,11 +304,19 @@ Prediction
 
 ## 👩‍💻 Author
 
-**Nageswari**
+## 👥 Team Members
 
-B.Tech – Computer Science and Engineering
+- **Nageswari Kondru**  
+  B.Tech – Computer Science and Engineering  
+  Vignan's Lara Institute of Technology & Science
 
-Vignan's Lara Institute of Technology & Science
+- **Maddula Manasa**  
+  B.Tech – Computer Science and Engineering  
+  Vignan's Lara Institute of Technology & Science
+
+- **Goriparthi Naga Harini**  
+  B.Tech – Computer Science and Engineering  
+  Vignan's Lara Institute of Technology & Science
 
 ---
 
